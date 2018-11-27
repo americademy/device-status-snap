@@ -1,6 +1,6 @@
 name: codeverse-device-status
 version: 0.0.1
-summary: System health statistics and heart beat system
+summary: System health statistics and heartbeat system
 description: |
   A web API which exposes system health information, and a job which logs important system information back to the codeverse platform
 confinement: strict
@@ -14,9 +14,19 @@ apps:
     plugs:
       - network-bind
 
+  heartbeat:
+    command: heartbeat.sh
+    daemon: simple
+
 parts:
   web-api:
     source: .
     plugin: go
     go-importpath: github.com/americademy/device-status-snap
+
+  heartbeat-service:
+    plugin: dump
+    source: service
+    organize:
+      heartbeat.sh: bin/
 
