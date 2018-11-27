@@ -1,0 +1,8 @@
+parts
+prime
+snap/.snapcraft
+stage
+codeverse-device-status*.snap
+codeverse-device-status*tar.bz2
+*.sublime-project
+*.sublime-workspace
