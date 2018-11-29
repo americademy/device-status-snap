@@ -1,5 +1,8 @@
 name: codeverse-device-status
-version: 0.0.1
+version: 0.0.2
+architectures:
+  - build-on: [amd64, i386, armhf]
+    run-on: all
 summary: System health statistics and heartbeat system
 description: |
   A web API which exposes system health information, and a job which logs important system information back to the codeverse platform
