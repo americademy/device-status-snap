@@ -17,19 +17,8 @@ apps:
     plugs:
       - network-bind
 
-  heartbeat:
-    command: heartbeat.sh
-    daemon: simple
-
 parts:
   web-api:
     source: .
     plugin: go
     go-importpath: github.com/americademy/device-status-snap
-
-  heartbeat-service:
-    plugin: dump
-    source: service
-    organize:
-      heartbeat.sh: bin/
-
